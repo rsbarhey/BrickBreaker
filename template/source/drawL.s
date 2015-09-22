@@ -1,0 +1,59 @@
+.section .text
+.globl drawL
+
+
+drawL:
+
+	push {lr}
+
+	ldr	r7, =L
+	mov	r1, #0			// index i
+	mov	r2, #0			// index j
+	mov	r3, #100		// m (number of columns)
+	mov	r5, #2			// element size
+	mov	r6, #0x0
+	
+	mov	r2, #20			// we want to start drawing at column 20 and row 0
+
+drawL1:
+	mul	r4, r3, r1		// m*i
+	add	r4, r2			// (m*i)+j
+	mul	r4, r5
+
+	strh	r6, [r7,r4]
+	add	r1, #1
+	cmp	r1, #50
+	blt	drawL1
+	
+
+	mov	r1, #0			// index i
+	mov	r2, #0			// index j
+	mov	r3, #100		// m
+	mov	r5, #2			// element size
+	mov	r6, #0x0		// color
+	mov	r2, #20			// start drawain at column 35
+	mov	r1, #49			// start at row 49
+drawL2:
+	mul	r4, r3, r1		// m*i
+	add	r4, r2			// (m*i)+j
+	mul	r4, r5
+
+	strh	r6, [r7, r4]
+	add	r2, #1
+	cmp	r2, #75
+	blt	drawL2
+
+
+
+	ldr	r1, =L
+
+
+	pop {pc}
+
+.section .data
+
+L:
+	.rep	5000
+	.hword	0xcccc
+	.endr
+

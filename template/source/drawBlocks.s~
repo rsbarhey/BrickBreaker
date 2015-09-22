@@ -1,0 +1,140 @@
+.section .text
+.globl drawBlocks
+
+
+drawBlocks:
+
+	push {lr}
+
+	ycoor	.req	r0
+	xcoor	.req	r1
+	height	.req	r2
+	width	.req	r3
+	colour	.req	r5
+	addr 	.req	r4
+
+	ldr 	ycoor, =102				// start drawing rows of blocks at 102, each bloack is 60x20 
+	ldr 	xcoor, =12				// start drawing at colomn 12.
+	
+loop:
+	ldr 	height, =20				//must use 767 X 1023 since we're starting at 0,0
+	ldr 	width, =60
+	ldr 	colour, =0x0 				// nice greenish colour
+	ldr	addr, [r7, #32]
+	bl	drawShape
+
+	add 	ycoor, #4
+	add 	xcoor, #4
+	sub 	height, #8					//must use 767 X 1023 since we're starting at 0,0
+	sub 	width, 	#8
+	ldr 	colour, =0xf000 				// nice greenish colour
+	ldr	addr, [r7, #32]
+	bl	drawShape
+
+	add	xcoor, #60
+	ldr	ycoor, =102
+	cmp	xcoor, #800
+	blt	loop
+
+
+	ldr 	ycoor, =126
+	ldr 	xcoor, =12
+	mov	r6, #0
+loop2:
+	ldr 	height, =20					//must use 767 X 1023 since we're starting at 0,0
+	ldr 	width, =60
+	ldr 	colour, =0x0 				// nice greenish colour
+	ldr	addr, [r7, #32]
+	bl	drawShape
+
+	add 	ycoor, #4
+	add 	xcoor, #4
+	sub 	height, #8					//must use 767 X 1023 since we're starting at 0,0
+	sub 	width, 	#8
+	ldr 	colour, =0xf000 				// nice greenish colour
+	ldr	addr, [r7, #32]
+	bl	drawShape
+
+	add	xcoor, #60
+	ldr	ycoor, =126
+	cmp	xcoor, #800
+	blt	loop2
+
+
+	ldr 	ycoor, =150
+	ldr 	xcoor, =12
+	mov	r6, #0
+loop3:
+	ldr 	height, =20					//must use 767 X 1023 since we're starting at 0,0
+	ldr 	width, =60
+	ldr 	colour, =0x0 				// nice greenish colour
+	ldr	addr, [r7, #32]
+	bl	drawShape
+
+	add 	ycoor, #4
+	add 	xcoor, #4
+	sub 	height, #8					//must use 767 X 1023 since we're starting at 0,0
+	sub 	width, 	#8
+	ldr 	colour, =0xf000					// nice greenish colour
+	ldr	addr, [r7, #32]
+	bl	drawShape
+
+	add	xcoor, #60
+	ldr	ycoor, =150
+	cmp	xcoor, #800
+	blt	loop3
+
+	ldr 	ycoor, =174
+	ldr 	xcoor, =12
+	mov	r6, #0
+loop4:
+	ldr 	height, =20					//must use 767 X 1023 since we're starting at 0,0
+	ldr 	width, =60
+	ldr 	colour, =0x0 				// nice greenish colour
+	ldr	addr, [r7, #32]
+	bl	drawShape
+
+	add 	ycoor, #4
+	add 	xcoor, #4
+	sub 	height, #8					//must use 767 X 1023 since we're starting at 0,0
+	sub 	width, 	#8
+	ldr 	colour, =0xf000					// nice greenish colour
+	ldr	addr, [r7, #32]
+	bl	drawShape
+
+	add	xcoor, #60
+	ldr	ycoor, =174
+	cmp	xcoor, #800
+	blt	loop4
+
+	ldr 	ycoor, =198
+	ldr 	xcoor, =12
+	mov	r6, #0
+loop5:
+	ldr 	height, =20					//must use 767 X 1023 since we're starting at 0,0
+	ldr 	width, =60
+	ldr 	colour, =0x0 				// nice greenish colour
+	ldr	addr, [r7, #32]
+	bl	drawShape
+
+	add 	ycoor, #4
+	add 	xcoor, #4
+	sub 	height, #8					//must use 767 X 1023 since we're starting at 0,0
+	sub 	width, 	#8
+	ldr 	colour, =0xf000					// nice greenish colour
+	ldr	addr, [r7, #32]
+	bl	drawShape
+
+	add	xcoor, #60
+	ldr	ycoor, =198
+	cmp	xcoor, #800
+	blt	loop5
+
+
+
+	
+
+	
+	pop {pc}
+
+

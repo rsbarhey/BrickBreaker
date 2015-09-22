@@ -1,0 +1,11 @@
+.section .text
+.globl drawY
+
+
+.section .data
+/*
+Y:
+	.rep	5000
+	.hword	0xcccc
+	.endr
+*/

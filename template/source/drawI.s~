@@ -1,0 +1,59 @@
+/*
+.section .text
+.globl	drawI
+
+drawI:
+
+	push {lr}
+
+	ldr	r7, =I
+	mov	r1, #8			// index i
+	mov	r2, #48			// index j
+	mov	r3, #100		// m (number of columns)
+	mov	r5, #2			// element size
+	mov	r6, #0x0
+drawI1:
+	mul	r4, r3, r1		// m*i
+	add	r4, r2			// (m*i)+j
+	mul	r4, r5
+
+	strh	r6, [r7, r4]
+	add	r1, #1
+	cmp	r1, #50
+	blt	drawI1
+
+	ldr	r7, =I
+	mov	r1, #8			// index i
+	mov	r2, #43			// index j
+	mov	r3, #100		// m (number of columns)
+	mov	r5, #2			// element size
+	mov	r6, #0x0
+drawI2:
+
+	mul	r4, r3, r1		// m*i
+	add	r4, r2			// (m*i)+j
+	mul	r4, r5
+
+	strh	r6, [r7, r4]
+	add	r2, #1
+	cmp	r2, #54
+	blt	drawI2
+	cmp	r1, #49
+	beq	doneI
+	mov	r1, #49
+	mov	r2, #43
+	b	drawI2
+	
+doneI:
+
+	ldr	r1, =I
+	pop {pc}
+
+
+.section .data
+
+I:
+	.rep	5000
+	.hword	0xffff
+	.endr
+*/

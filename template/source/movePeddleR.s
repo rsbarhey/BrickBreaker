@@ -1,0 +1,42 @@
+.section .text
+.globl movePeddleR
+
+
+
+movePeddleR:
+	push {r0, r2-r11, lr}
+
+	ycoor	.req	r0
+	xcoor	.req	r1
+	height	.req	r2
+	width	.req	r3
+	colour	.req	r5
+	addr 	.req	r4
+	
+	ldr	r10, =722					// pixels of the wall that the peddle should not cross
+	//ldr 	xcoor, =370					// depening on the position of the peddle this will change, this should passed as an arg
+undraw:
+	cmp	xcoor, r10					// if xcoor of the peddle is less than 722 don't move it anymore
+	bge	donemoving
+	ldr 	ycoor, =737					// y coordinate = 737					
+	ldr 	height, =15					// height = 15
+	ldr 	width, =2					// width 2
+	ldr 	colour, =0xff11					// and a colour
+	ldr	addr, [r7, #32]
+	bl	drawShape					// undraw the specified pixel of the peddle, instead of undrawing the whole thing, allows for smooth movement
+
+
+	add	xcoor, #2					// add x by 2 new location of the peddle
+
+draw:
+	ldr	colour, =0x00ff					// draw the peddle with the new specifications
+	ldr	ycoor, =737
+	ldr	height, =15
+	ldr	width, =120
+	bl	drawShape
+	//bl	waitloop					// after drawing the new location wait again
+
+donemoving:
+
+	pop {r0, r2-r11, pc}
+

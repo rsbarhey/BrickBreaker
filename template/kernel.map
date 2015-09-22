@@ -1,0 +1,698 @@
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD build/copy.o
+LOAD build/drawA.o
+LOAD build/drawBlocks.o
+LOAD build/drawEight.o
+LOAD build/drawEleven.o
+LOAD build/drawFive.o
+LOAD build/drawFour.o
+LOAD build/drawfteen.o
+LOAD build/drawft.o
+LOAD build/drawHeart.o
+LOAD build/drawI.o
+LOAD build/drawL.o
+LOAD build/drawNine.o
+LOAD build/drawOne.o
+LOAD build/drawPeddle.o
+LOAD build/drawP.o
+LOAD build/drawQ.o
+LOAD build/drawScore.o
+LOAD build/drawSeven.o
+LOAD build/drawShape.o
+LOAD build/drawSix.o
+LOAD build/drawst.o
+LOAD build/drawTen.o
+LOAD build/drawThree.o
+LOAD build/drawT.o
+LOAD build/drawtt.o
+LOAD build/drawTwelve.o
+LOAD build/drawTwo.o
+LOAD build/drawU.o
+LOAD build/drawY.o
+LOAD build/drawZero.o
+LOAD build/equal.o
+LOAD build/framebuffer.o
+LOAD build/gameOver.o
+LOAD build/gameScreen.o
+LOAD build/GameWon.o
+LOAD build/getGPIO.o
+LOAD build/GG.o
+LOAD build/jtag.o
+LOAD build/mailbox.o
+LOAD build/maingGame.o
+LOAD build/main.o
+LOAD build/menuScreen.o
+LOAD build/movePeddleL.o
+LOAD build/movePeddleR.o
+LOAD build/NewGame.o
+LOAD build/Read.o
+LOAD build/ReadSNES.o
+LOAD build/SetGPIO.o
+LOAD build/SNESinit.o
+LOAD build/UARTinit.o
+LOAD build/wipe.o
+LOAD build/Write.o
+
+.init           0x0000000000008000      0x8e4
+ *(.init)
+ .init          0x0000000000008000      0x8e0 build/maingGame.o
+                0x0000000000008000                MainGame
+ .init          0x00000000000088e0        0x4 build/main.o
+                0x00000000000088e0                _start
+
+.data           0x0000000000009080    0x15d21
+ *(.data)
+ .data          0x0000000000009080        0x0 build/copy.o
+ .data          0x0000000000009080     0x2710 build/drawA.o
+ .data          0x000000000000b790        0x0 build/drawBlocks.o
+ .data          0x000000000000b790        0x0 build/drawEight.o
+ .data          0x000000000000b790        0x0 build/drawEleven.o
+ .data          0x000000000000b790        0x0 build/drawFive.o
+ .data          0x000000000000b790        0x0 build/drawFour.o
+ .data          0x000000000000b790        0x0 build/drawfteen.o
+ .data          0x000000000000b790        0x0 build/drawft.o
+ .data          0x000000000000b790        0x0 build/drawHeart.o
+ .data          0x000000000000b790     0x2710 build/drawI.o
+ .data          0x000000000000dea0     0x2710 build/drawL.o
+ .data          0x00000000000105b0        0x0 build/drawNine.o
+ .data          0x00000000000105b0        0x0 build/drawOne.o
+ .data          0x00000000000105b0        0x0 build/drawPeddle.o
+ .data          0x00000000000105b0     0x2710 build/drawP.o
+ .data          0x0000000000012cc0     0x2710 build/drawQ.o
+ .data          0x00000000000153d0        0x0 build/drawScore.o
+ .data          0x00000000000153d0        0x0 build/drawSeven.o
+ .data          0x00000000000153d0        0x0 build/drawShape.o
+ .data          0x00000000000153d0        0x0 build/drawSix.o
+ .data          0x00000000000153d0        0x0 build/drawst.o
+ .data          0x00000000000153d0        0x0 build/drawTen.o
+ .data          0x00000000000153d0        0x0 build/drawThree.o
+ .data          0x00000000000153d0     0x2710 build/drawT.o
+ .data          0x0000000000017ae0        0x0 build/drawtt.o
+ .data          0x0000000000017ae0        0x0 build/drawTwelve.o
+ .data          0x0000000000017ae0        0x0 build/drawTwo.o
+ .data          0x0000000000017ae0     0x2710 build/drawU.o
+ .data          0x000000000001a1f0     0x2710 build/drawY.o
+ .data          0x000000000001c900        0x0 build/drawZero.o
+ .data          0x000000000001c900        0x0 build/equal.o
+ *fill*         0x000000000001c900      0x700 3f3f3f3f
+ .data          0x000000000001d000     0x1000 build/framebuffer.o
+                0x000000000001d030                FrameBufferPointer
+ .data          0x000000000001e000        0x0 build/gameOver.o
+ .data          0x000000000001e000        0x0 build/gameScreen.o
+ .data          0x000000000001e000        0x0 build/GameWon.o
+ .data          0x000000000001e000        0x0 build/getGPIO.o
+ .data          0x000000000001e000        0x0 build/GG.o
+ .data          0x000000000001e000        0x0 build/jtag.o
+ .data          0x000000000001e000        0x0 build/mailbox.o
+ .data          0x000000000001e000        0x2 build/maingGame.o
+ .data          0x000000000001e002      0x11f build/main.o
+ .data          0x000000000001e121      0xc80 build/menuScreen.o
+ .data          0x000000000001eda1        0x0 build/movePeddleL.o
+ .data          0x000000000001eda1        0x0 build/movePeddleR.o
+ .data          0x000000000001eda1        0x0 build/NewGame.o
+ .data          0x000000000001eda1        0x0 build/Read.o
+ .data          0x000000000001eda1        0x0 build/ReadSNES.o
+ .data          0x000000000001eda1        0x0 build/SetGPIO.o
+ .data          0x000000000001eda1        0x0 build/SNESinit.o
+ .data          0x000000000001eda1        0x0 build/UARTinit.o
+ .data          0x000000000001eda1        0x0 build/wipe.o
+ .data          0x000000000001eda1        0x0 build/Write.o
+ *.c.o(*)
+
+.igot.plt       0x000000000001eda4        0x0
+ .igot.plt      0x0000000000000000        0x0 build/copy.o
+
+.text           0x000000000001eda4     0x2d7c
+ *.c.o(.text)
+ *(.text)
+ .text          0x000000000001eda4       0x74 build/copy.o
+                0x000000000001eda4                copy
+ .text          0x000000000001ee18       0xb4 build/drawA.o
+                0x000000000001ee18                drawA
+ .text          0x000000000001eecc       0xc8 build/drawBlocks.o
+                0x000000000001eecc                drawBlocks
+ .text          0x000000000001ef94       0xe4 build/drawEight.o
+                0x000000000001ef94                drawEight
+ .text          0x000000000001f078       0x2c build/drawEleven.o
+                0x000000000001f078                drawEleven
+ .text          0x000000000001f0a4       0xa4 build/drawFive.o
+                0x000000000001f0a4                drawFive
+ .text          0x000000000001f148       0x88 build/drawFour.o
+                0x000000000001f148                drawFour
+ .text          0x000000000001f1d0       0x24 build/drawfteen.o
+                0x000000000001f1d0                drawfteen
+ .text          0x000000000001f1f4       0x24 build/drawft.o
+                0x000000000001f1f4                drawft
+ .text          0x000000000001f218      0x1c8 build/drawHeart.o
+                0x000000000001f218                drawHeart
+ .text          0x000000000001f3e0       0x8c build/drawI.o
+                0x000000000001f3e0                drawI
+ .text          0x000000000001f46c       0x80 build/drawL.o
+                0x000000000001f46c                drawL
+ .text          0x000000000001f4ec       0xd4 build/drawNine.o
+                0x000000000001f4ec                drawNine
+ .text          0x000000000001f5c0       0x24 build/drawOne.o
+                0x000000000001f5c0                drawOne
+ .text          0x000000000001f5e4       0x2c build/drawPeddle.o
+                0x000000000001f5e4                drawPeddle
+ .text          0x000000000001f610       0xec build/drawP.o
+                0x000000000001f610                drawP
+ .text          0x000000000001f6fc       0xd4 build/drawQ.o
+                0x000000000001f6fc                drawQ
+ .text          0x000000000001f7d0      0x144 build/drawScore.o
+                0x000000000001f7d0                drawScore
+ .text          0x000000000001f914       0x78 build/drawSeven.o
+                0x000000000001f914                drawSeven
+ .text          0x000000000001f98c       0x64 build/drawShape.o
+                0x000000000001f98c                drawShape
+ .text          0x000000000001f9f0       0xcc build/drawSix.o
+                0x000000000001f9f0                drawSix
+ .text          0x000000000001fabc       0x24 build/drawst.o
+                0x000000000001fabc                drawst
+ .text          0x000000000001fae0       0x34 build/drawTen.o
+                0x000000000001fae0                drawTen
+ .text          0x000000000001fb14       0xb0 build/drawThree.o
+                0x000000000001fb14                drawThree
+ .text          0x000000000001fbc4       0x78 build/drawT.o
+                0x000000000001fbc4                drawT
+ .text          0x000000000001fc3c       0x24 build/drawtt.o
+                0x000000000001fc3c                drawtt
+ .text          0x000000000001fc60       0x24 build/drawTwelve.o
+                0x000000000001fc60                drawTwelve
+ .text          0x000000000001fc84       0xa4 build/drawTwo.o
+                0x000000000001fc84                drawTwo
+ .text          0x000000000001fd28       0x8c build/drawU.o
+                0x000000000001fd28                drawU
+ .text          0x000000000001fdb4       0xc4 build/drawY.o
+                0x000000000001fdb4                drawY
+ .text          0x000000000001fe78       0xcc build/drawZero.o
+                0x000000000001fe78                drawZero
+ .text          0x000000000001ff44       0x44 build/equal.o
+                0x000000000001ff44                _equal
+ .text          0x000000000001ff88       0x4c build/framebuffer.o
+                0x000000000001ff88                InitFrameBuffer
+ .text          0x000000000001ffd4      0x860 build/gameOver.o
+                0x000000000001ffd4                gameOver
+ .text          0x0000000000020834       0x78 build/gameScreen.o
+                0x0000000000020834                gameScreen
+ .text          0x00000000000208ac        0x8 build/GameWon.o
+                0x00000000000208ac                GameWon
+ .text          0x00000000000208b4       0x40 build/getGPIO.o
+                0x00000000000208b4                GetGPIO
+ .text          0x00000000000208f4      0x824 build/GG.o
+                0x00000000000208f4                GG
+ .text          0x0000000000021118       0x8c build/jtag.o
+                0x0000000000021118                EnableJTAG
+ .text          0x00000000000211a4       0x60 build/mailbox.o
+                0x00000000000211a4                MailboxWrite
+                0x00000000000211d0                MailboxRead
+ .text          0x0000000000021204        0x0 build/maingGame.o
+ .text          0x0000000000021204       0x30 build/main.o
+ .text          0x0000000000021234      0x424 build/menuScreen.o
+                0x0000000000021234                menuScreen
+ .text          0x0000000000021658       0x50 build/movePeddleL.o
+                0x0000000000021658                movePeddleL
+ .text          0x00000000000216a8       0x50 build/movePeddleR.o
+                0x00000000000216a8                movePeddleR
+ .text          0x00000000000216f8       0xe0 build/NewGame.o
+                0x00000000000216f8                NewGame
+ .text          0x00000000000217d8       0x2c build/Read.o
+                0x00000000000217d8                _Read
+ .text          0x0000000000021804       0xa0 build/ReadSNES.o
+                0x0000000000021804                ReadSNES
+ .text          0x00000000000218a4       0x38 build/SetGPIO.o
+                0x00000000000218a4                SetGPIO
+ .text          0x00000000000218dc       0x38 build/SNESinit.o
+                0x00000000000218dc                SNESinit
+ .text          0x0000000000021914      0x180 build/UARTinit.o
+                0x0000000000021914                _UARTinit
+ .text          0x0000000000021a94       0x68 build/wipe.o
+                0x0000000000021a94                wipe
+ .text          0x0000000000021afc       0x24 build/Write.o
+                0x0000000000021afc                _Write
+OUTPUT(build/output.elf elf32-littlearm)
+
+.glue_7         0x0000000000021b20        0x0
+ .glue_7        0x0000000000000000        0x0 linker stubs
+
+.glue_7t        0x0000000000021b20        0x0
+ .glue_7t       0x0000000000000000        0x0 linker stubs
+
+.vfp11_veneer   0x0000000000021b20        0x0
+ .vfp11_veneer  0x0000000000000000        0x0 linker stubs
+
+.v4_bx          0x0000000000021b20        0x0
+ .v4_bx         0x0000000000000000        0x0 linker stubs
+
+.iplt           0x0000000000021b20        0x0
+ .iplt          0x0000000000000000        0x0 build/copy.o
+
+.rel.dyn        0x0000000000021b20        0x0
+ .rel.iplt      0x0000000000000000        0x0 build/copy.o
+
+.bss            0x0000000000021b20        0x0
+ .bss           0x0000000000021b20        0x0 build/copy.o
+ .bss           0x0000000000021b20        0x0 build/drawA.o
+ .bss           0x0000000000021b20        0x0 build/drawBlocks.o
+ .bss           0x0000000000021b20        0x0 build/drawEight.o
+ .bss           0x0000000000021b20        0x0 build/drawEleven.o
+ .bss           0x0000000000021b20        0x0 build/drawFive.o
+ .bss           0x0000000000021b20        0x0 build/drawFour.o
+ .bss           0x0000000000021b20        0x0 build/drawfteen.o
+ .bss           0x0000000000021b20        0x0 build/drawft.o
+ .bss           0x0000000000021b20        0x0 build/drawHeart.o
+ .bss           0x0000000000021b20        0x0 build/drawI.o
+ .bss           0x0000000000021b20        0x0 build/drawL.o
+ .bss           0x0000000000021b20        0x0 build/drawNine.o
+ .bss           0x0000000000021b20        0x0 build/drawOne.o
+ .bss           0x0000000000021b20        0x0 build/drawPeddle.o
+ .bss           0x0000000000021b20        0x0 build/drawP.o
+ .bss           0x0000000000021b20        0x0 build/drawQ.o
+ .bss           0x0000000000021b20        0x0 build/drawScore.o
+ .bss           0x0000000000021b20        0x0 build/drawSeven.o
+ .bss           0x0000000000021b20        0x0 build/drawShape.o
+ .bss           0x0000000000021b20        0x0 build/drawSix.o
+ .bss           0x0000000000021b20        0x0 build/drawst.o
+ .bss           0x0000000000021b20        0x0 build/drawTen.o
+ .bss           0x0000000000021b20        0x0 build/drawThree.o
+ .bss           0x0000000000021b20        0x0 build/drawT.o
+ .bss           0x0000000000021b20        0x0 build/drawtt.o
+ .bss           0x0000000000021b20        0x0 build/drawTwelve.o
+ .bss           0x0000000000021b20        0x0 build/drawTwo.o
+ .bss           0x0000000000021b20        0x0 build/drawU.o
+ .bss           0x0000000000021b20        0x0 build/drawY.o
+ .bss           0x0000000000021b20        0x0 build/drawZero.o
+ .bss           0x0000000000021b20        0x0 build/equal.o
+ .bss           0x0000000000021b20        0x0 build/framebuffer.o
+ .bss           0x0000000000021b20        0x0 build/gameOver.o
+ .bss           0x0000000000021b20        0x0 build/gameScreen.o
+ .bss           0x0000000000021b20        0x0 build/GameWon.o
+ .bss           0x0000000000021b20        0x0 build/getGPIO.o
+ .bss           0x0000000000021b20        0x0 build/GG.o
+ .bss           0x0000000000021b20        0x0 build/jtag.o
+ .bss           0x0000000000021b20        0x0 build/mailbox.o
+ .bss           0x0000000000021b20        0x0 build/maingGame.o
+ .bss           0x0000000000021b20        0x0 build/main.o
+ .bss           0x0000000000021b20        0x0 build/menuScreen.o
+ .bss           0x0000000000021b20        0x0 build/movePeddleL.o
+ .bss           0x0000000000021b20        0x0 build/movePeddleR.o
+ .bss           0x0000000000021b20        0x0 build/NewGame.o
+ .bss           0x0000000000021b20        0x0 build/Read.o
+ .bss           0x0000000000021b20        0x0 build/ReadSNES.o
+ .bss           0x0000000000021b20        0x0 build/SetGPIO.o
+ .bss           0x0000000000021b20        0x0 build/SNESinit.o
+ .bss           0x0000000000021b20        0x0 build/UARTinit.o
+ .bss           0x0000000000021b20        0x0 build/wipe.o
+ .bss           0x0000000000021b20        0x0 build/Write.o
+
+.ARM.attributes
+                0x0000000000000000       0x26
+ .ARM.attributes
+                0x0000000000000000       0x26 build/copy.o
+ .ARM.attributes
+                0x0000000000000026       0x26 build/drawA.o
+ .ARM.attributes
+                0x000000000000004c       0x26 build/drawBlocks.o
+ .ARM.attributes
+                0x0000000000000072       0x26 build/drawEight.o
+ .ARM.attributes
+                0x0000000000000098       0x26 build/drawEleven.o
+ .ARM.attributes
+                0x00000000000000be       0x26 build/drawFive.o
+ .ARM.attributes
+                0x00000000000000e4       0x26 build/drawFour.o
+ .ARM.attributes
+                0x000000000000010a       0x26 build/drawfteen.o
+ .ARM.attributes
+                0x0000000000000130       0x26 build/drawft.o
+ .ARM.attributes
+                0x0000000000000156       0x26 build/drawHeart.o
+ .ARM.attributes
+                0x000000000000017c       0x26 build/drawI.o
+ .ARM.attributes
+                0x00000000000001a2       0x26 build/drawL.o
+ .ARM.attributes
+                0x00000000000001c8       0x26 build/drawNine.o
+ .ARM.attributes
+                0x00000000000001ee       0x26 build/drawOne.o
+ .ARM.attributes
+                0x0000000000000214       0x26 build/drawPeddle.o
+ .ARM.attributes
+                0x000000000000023a       0x26 build/drawP.o
+ .ARM.attributes
+                0x0000000000000260       0x26 build/drawQ.o
+ .ARM.attributes
+                0x0000000000000286       0x26 build/drawScore.o
+ .ARM.attributes
+                0x00000000000002ac       0x26 build/drawSeven.o
+ .ARM.attributes
+                0x00000000000002d2       0x26 build/drawShape.o
+ .ARM.attributes
+                0x00000000000002f8       0x26 build/drawSix.o
+ .ARM.attributes
+                0x000000000000031e       0x26 build/drawst.o
+ .ARM.attributes
+                0x0000000000000344       0x26 build/drawTen.o
+ .ARM.attributes
+                0x000000000000036a       0x26 build/drawThree.o
+ .ARM.attributes
+                0x0000000000000390       0x26 build/drawT.o
+ .ARM.attributes
+                0x00000000000003b6       0x26 build/drawtt.o
+ .ARM.attributes
+                0x00000000000003dc       0x26 build/drawTwelve.o
+ .ARM.attributes
+                0x0000000000000402       0x26 build/drawTwo.o
+ .ARM.attributes
+                0x0000000000000428       0x26 build/drawU.o
+ .ARM.attributes
+                0x000000000000044e       0x26 build/drawY.o
+ .ARM.attributes
+                0x0000000000000474       0x26 build/drawZero.o
+ .ARM.attributes
+                0x000000000000049a       0x26 build/equal.o
+ .ARM.attributes
+                0x00000000000004c0       0x26 build/framebuffer.o
+ .ARM.attributes
+                0x00000000000004e6       0x26 build/gameOver.o
+ .ARM.attributes
+                0x000000000000050c       0x26 build/gameScreen.o
+ .ARM.attributes
+                0x0000000000000532       0x26 build/GameWon.o
+ .ARM.attributes
+                0x0000000000000558       0x26 build/getGPIO.o
+ .ARM.attributes
+                0x000000000000057e       0x26 build/GG.o
+ .ARM.attributes
+                0x00000000000005a4       0x26 build/jtag.o
+ .ARM.attributes
+                0x00000000000005ca       0x26 build/mailbox.o
+ .ARM.attributes
+                0x00000000000005f0       0x26 build/maingGame.o
+ .ARM.attributes
+                0x0000000000000616       0x26 build/main.o
+ .ARM.attributes
+                0x000000000000063c       0x26 build/menuScreen.o
+ .ARM.attributes
+                0x0000000000000662       0x26 build/movePeddleL.o
+ .ARM.attributes
+                0x0000000000000688       0x26 build/movePeddleR.o
+ .ARM.attributes
+                0x00000000000006ae       0x26 build/NewGame.o
+ .ARM.attributes
+                0x00000000000006d4       0x26 build/Read.o
+ .ARM.attributes
+                0x00000000000006fa       0x26 build/ReadSNES.o
+ .ARM.attributes
+                0x0000000000000720       0x26 build/SetGPIO.o
+ .ARM.attributes
+                0x0000000000000746       0x26 build/SNESinit.o
+ .ARM.attributes
+                0x000000000000076c       0x26 build/UARTinit.o
+ .ARM.attributes
+                0x0000000000000792       0x26 build/wipe.o
+ .ARM.attributes
+                0x00000000000007b8       0x26 build/Write.o
+
+.debug_line     0x0000000000000000     0x1ba8
+ .debug_line    0x0000000000000000       0x59 build/copy.o
+ .debug_line    0x0000000000000059       0x6a build/drawA.o
+ .debug_line    0x00000000000000c3       0x7c build/drawBlocks.o
+ .debug_line    0x000000000000013f       0x7a build/drawEight.o
+ .debug_line    0x00000000000001b9       0x4d build/drawEleven.o
+ .debug_line    0x0000000000000206       0x69 build/drawFive.o
+ .debug_line    0x000000000000026f       0x62 build/drawFour.o
+ .debug_line    0x00000000000002d1       0x4a build/drawfteen.o
+ .debug_line    0x000000000000031b       0x47 build/drawft.o
+ .debug_line    0x0000000000000362       0xc6 build/drawHeart.o
+ .debug_line    0x0000000000000428       0x60 build/drawI.o
+ .debug_line    0x0000000000000488       0x5d build/drawL.o
+ .debug_line    0x00000000000004e5       0x75 build/drawNine.o
+ .debug_line    0x000000000000055a       0x48 build/drawOne.o
+ .debug_line    0x00000000000005a2       0x4f build/drawPeddle.o
+ .debug_line    0x00000000000005f1       0x7b build/drawP.o
+ .debug_line    0x000000000000066c       0x73 build/drawQ.o
+ .debug_line    0x00000000000006df       0x95 build/drawScore.o
+ .debug_line    0x0000000000000774       0x5f build/drawSeven.o
+ .debug_line    0x00000000000007d3       0x5a build/drawShape.o
+ .debug_line    0x000000000000082d       0x72 build/drawSix.o
+ .debug_line    0x000000000000089f       0x47 build/drawst.o
+ .debug_line    0x00000000000008e6       0x4c build/drawTen.o
+ .debug_line    0x0000000000000932       0x6d build/drawThree.o
+ .debug_line    0x000000000000099f       0x5b build/drawT.o
+ .debug_line    0x00000000000009fa       0x47 build/drawtt.o
+ .debug_line    0x0000000000000a41       0x4b build/drawTwelve.o
+ .debug_line    0x0000000000000a8c       0x68 build/drawTwo.o
+ .debug_line    0x0000000000000af4       0x60 build/drawU.o
+ .debug_line    0x0000000000000b54       0x6e build/drawY.o
+ .debug_line    0x0000000000000bc2       0x73 build/drawZero.o
+ .debug_line    0x0000000000000c35       0x4e build/equal.o
+ .debug_line    0x0000000000000c83       0x5a build/framebuffer.o
+ .debug_line    0x0000000000000cdd      0x289 build/gameOver.o
+ .debug_line    0x0000000000000f66       0x62 build/gameScreen.o
+ .debug_line    0x0000000000000fc8       0x41 build/GameWon.o
+ .debug_line    0x0000000000001009       0x4f build/getGPIO.o
+ .debug_line    0x0000000000001058      0x276 build/GG.o
+ .debug_line    0x00000000000012ce       0x61 build/jtag.o
+ .debug_line    0x000000000000132f       0x5b build/mailbox.o
+ .debug_line    0x000000000000138a      0x291 build/maingGame.o
+ .debug_line    0x000000000000161b       0x59 build/main.o
+ .debug_line    0x0000000000001674      0x162 build/menuScreen.o
+ .debug_line    0x00000000000017d6       0x59 build/movePeddleL.o
+ .debug_line    0x000000000000182f       0x59 build/movePeddleR.o
+ .debug_line    0x0000000000001888       0x7d build/NewGame.o
+ .debug_line    0x0000000000001905       0x4b build/Read.o
+ .debug_line    0x0000000000001950       0x68 build/ReadSNES.o
+ .debug_line    0x00000000000019b8       0x4f build/SetGPIO.o
+ .debug_line    0x0000000000001a07       0x52 build/SNESinit.o
+ .debug_line    0x0000000000001a59       0xad build/UARTinit.o
+ .debug_line    0x0000000000001b06       0x5a build/wipe.o
+ .debug_line    0x0000000000001b60       0x48 build/Write.o
+
+.debug_info     0x0000000000000000     0x12a9
+ .debug_info    0x0000000000000000       0x57 build/copy.o
+ .debug_info    0x0000000000000057       0x58 build/drawA.o
+ .debug_info    0x00000000000000af       0x5d build/drawBlocks.o
+ .debug_info    0x000000000000010c       0x5c build/drawEight.o
+ .debug_info    0x0000000000000168       0x5d build/drawEleven.o
+ .debug_info    0x00000000000001c5       0x5b build/drawFive.o
+ .debug_info    0x0000000000000220       0x5b build/drawFour.o
+ .debug_info    0x000000000000027b       0x5c build/drawfteen.o
+ .debug_info    0x00000000000002d7       0x59 build/drawft.o
+ .debug_info    0x0000000000000330       0x5c build/drawHeart.o
+ .debug_info    0x000000000000038c       0x58 build/drawI.o
+ .debug_info    0x00000000000003e4       0x58 build/drawL.o
+ .debug_info    0x000000000000043c       0x5b build/drawNine.o
+ .debug_info    0x0000000000000497       0x5a build/drawOne.o
+ .debug_info    0x00000000000004f1       0x5d build/drawPeddle.o
+ .debug_info    0x000000000000054e       0x58 build/drawP.o
+ .debug_info    0x00000000000005a6       0x58 build/drawQ.o
+ .debug_info    0x00000000000005fe       0x5c build/drawScore.o
+ .debug_info    0x000000000000065a       0x5c build/drawSeven.o
+ .debug_info    0x00000000000006b6       0x5c build/drawShape.o
+ .debug_info    0x0000000000000712       0x5a build/drawSix.o
+ .debug_info    0x000000000000076c       0x59 build/drawst.o
+ .debug_info    0x00000000000007c5       0x5a build/drawTen.o
+ .debug_info    0x000000000000081f       0x5c build/drawThree.o
+ .debug_info    0x000000000000087b       0x58 build/drawT.o
+ .debug_info    0x00000000000008d3       0x59 build/drawtt.o
+ .debug_info    0x000000000000092c       0x5d build/drawTwelve.o
+ .debug_info    0x0000000000000989       0x5a build/drawTwo.o
+ .debug_info    0x00000000000009e3       0x58 build/drawU.o
+ .debug_info    0x0000000000000a3b       0x58 build/drawY.o
+ .debug_info    0x0000000000000a93       0x5b build/drawZero.o
+ .debug_info    0x0000000000000aee       0x58 build/equal.o
+ .debug_info    0x0000000000000b46       0x5e build/framebuffer.o
+ .debug_info    0x0000000000000ba4       0x5b build/gameOver.o
+ .debug_info    0x0000000000000bff       0x5d build/gameScreen.o
+ .debug_info    0x0000000000000c5c       0x5a build/GameWon.o
+ .debug_info    0x0000000000000cb6       0x5a build/getGPIO.o
+ .debug_info    0x0000000000000d10       0x55 build/GG.o
+ .debug_info    0x0000000000000d65       0x57 build/jtag.o
+ .debug_info    0x0000000000000dbc       0x5a build/mailbox.o
+ .debug_info    0x0000000000000e16       0x5c build/maingGame.o
+ .debug_info    0x0000000000000e72       0x53 build/main.o
+ .debug_info    0x0000000000000ec5       0x5d build/menuScreen.o
+ .debug_info    0x0000000000000f22       0x5e build/movePeddleL.o
+ .debug_info    0x0000000000000f80       0x5e build/movePeddleR.o
+ .debug_info    0x0000000000000fde       0x5a build/NewGame.o
+ .debug_info    0x0000000000001038       0x57 build/Read.o
+ .debug_info    0x000000000000108f       0x5b build/ReadSNES.o
+ .debug_info    0x00000000000010ea       0x5a build/SetGPIO.o
+ .debug_info    0x0000000000001144       0x5b build/SNESinit.o
+ .debug_info    0x000000000000119f       0x5b build/UARTinit.o
+ .debug_info    0x00000000000011fa       0x57 build/wipe.o
+ .debug_info    0x0000000000001251       0x58 build/Write.o
+
+.debug_abbrev   0x0000000000000000      0x422
+ .debug_abbrev  0x0000000000000000       0x14 build/copy.o
+ .debug_abbrev  0x0000000000000014       0x14 build/drawA.o
+ .debug_abbrev  0x0000000000000028       0x14 build/drawBlocks.o
+ .debug_abbrev  0x000000000000003c       0x14 build/drawEight.o
+ .debug_abbrev  0x0000000000000050       0x14 build/drawEleven.o
+ .debug_abbrev  0x0000000000000064       0x14 build/drawFive.o
+ .debug_abbrev  0x0000000000000078       0x14 build/drawFour.o
+ .debug_abbrev  0x000000000000008c       0x14 build/drawfteen.o
+ .debug_abbrev  0x00000000000000a0       0x14 build/drawft.o
+ .debug_abbrev  0x00000000000000b4       0x14 build/drawHeart.o
+ .debug_abbrev  0x00000000000000c8       0x14 build/drawI.o
+ .debug_abbrev  0x00000000000000dc       0x14 build/drawL.o
+ .debug_abbrev  0x00000000000000f0       0x14 build/drawNine.o
+ .debug_abbrev  0x0000000000000104       0x14 build/drawOne.o
+ .debug_abbrev  0x0000000000000118       0x14 build/drawPeddle.o
+ .debug_abbrev  0x000000000000012c       0x14 build/drawP.o
+ .debug_abbrev  0x0000000000000140       0x14 build/drawQ.o
+ .debug_abbrev  0x0000000000000154       0x14 build/drawScore.o
+ .debug_abbrev  0x0000000000000168       0x14 build/drawSeven.o
+ .debug_abbrev  0x000000000000017c       0x14 build/drawShape.o
+ .debug_abbrev  0x0000000000000190       0x14 build/drawSix.o
+ .debug_abbrev  0x00000000000001a4       0x14 build/drawst.o
+ .debug_abbrev  0x00000000000001b8       0x14 build/drawTen.o
+ .debug_abbrev  0x00000000000001cc       0x14 build/drawThree.o
+ .debug_abbrev  0x00000000000001e0       0x14 build/drawT.o
+ .debug_abbrev  0x00000000000001f4       0x14 build/drawtt.o
+ .debug_abbrev  0x0000000000000208       0x14 build/drawTwelve.o
+ .debug_abbrev  0x000000000000021c       0x14 build/drawTwo.o
+ .debug_abbrev  0x0000000000000230       0x14 build/drawU.o
+ .debug_abbrev  0x0000000000000244       0x14 build/drawY.o
+ .debug_abbrev  0x0000000000000258       0x14 build/drawZero.o
+ .debug_abbrev  0x000000000000026c       0x14 build/equal.o
+ .debug_abbrev  0x0000000000000280       0x14 build/framebuffer.o
+ .debug_abbrev  0x0000000000000294       0x14 build/gameOver.o
+ .debug_abbrev  0x00000000000002a8       0x14 build/gameScreen.o
+ .debug_abbrev  0x00000000000002bc       0x14 build/GameWon.o
+ .debug_abbrev  0x00000000000002d0       0x14 build/getGPIO.o
+ .debug_abbrev  0x00000000000002e4       0x14 build/GG.o
+ .debug_abbrev  0x00000000000002f8       0x14 build/jtag.o
+ .debug_abbrev  0x000000000000030c       0x14 build/mailbox.o
+ .debug_abbrev  0x0000000000000320       0x14 build/maingGame.o
+ .debug_abbrev  0x0000000000000334       0x12 build/main.o
+ .debug_abbrev  0x0000000000000346       0x14 build/menuScreen.o
+ .debug_abbrev  0x000000000000035a       0x14 build/movePeddleL.o
+ .debug_abbrev  0x000000000000036e       0x14 build/movePeddleR.o
+ .debug_abbrev  0x0000000000000382       0x14 build/NewGame.o
+ .debug_abbrev  0x0000000000000396       0x14 build/Read.o
+ .debug_abbrev  0x00000000000003aa       0x14 build/ReadSNES.o
+ .debug_abbrev  0x00000000000003be       0x14 build/SetGPIO.o
+ .debug_abbrev  0x00000000000003d2       0x14 build/SNESinit.o
+ .debug_abbrev  0x00000000000003e6       0x14 build/UARTinit.o
+ .debug_abbrev  0x00000000000003fa       0x14 build/wipe.o
+ .debug_abbrev  0x000000000000040e       0x14 build/Write.o
+
+.debug_aranges  0x0000000000000000      0x6a8
+ .debug_aranges
+                0x0000000000000000       0x20 build/copy.o
+ .debug_aranges
+                0x0000000000000020       0x20 build/drawA.o
+ .debug_aranges
+                0x0000000000000040       0x20 build/drawBlocks.o
+ .debug_aranges
+                0x0000000000000060       0x20 build/drawEight.o
+ .debug_aranges
+                0x0000000000000080       0x20 build/drawEleven.o
+ .debug_aranges
+                0x00000000000000a0       0x20 build/drawFive.o
+ .debug_aranges
+                0x00000000000000c0       0x20 build/drawFour.o
+ .debug_aranges
+                0x00000000000000e0       0x20 build/drawfteen.o
+ .debug_aranges
+                0x0000000000000100       0x20 build/drawft.o
+ .debug_aranges
+                0x0000000000000120       0x20 build/drawHeart.o
+ .debug_aranges
+                0x0000000000000140       0x20 build/drawI.o
+ .debug_aranges
+                0x0000000000000160       0x20 build/drawL.o
+ .debug_aranges
+                0x0000000000000180       0x20 build/drawNine.o
+ .debug_aranges
+                0x00000000000001a0       0x20 build/drawOne.o
+ .debug_aranges
+                0x00000000000001c0       0x20 build/drawPeddle.o
+ .debug_aranges
+                0x00000000000001e0       0x20 build/drawP.o
+ .debug_aranges
+                0x0000000000000200       0x20 build/drawQ.o
+ .debug_aranges
+                0x0000000000000220       0x20 build/drawScore.o
+ .debug_aranges
+                0x0000000000000240       0x20 build/drawSeven.o
+ .debug_aranges
+                0x0000000000000260       0x20 build/drawShape.o
+ .debug_aranges
+                0x0000000000000280       0x20 build/drawSix.o
+ .debug_aranges
+                0x00000000000002a0       0x20 build/drawst.o
+ .debug_aranges
+                0x00000000000002c0       0x20 build/drawTen.o
+ .debug_aranges
+                0x00000000000002e0       0x20 build/drawThree.o
+ .debug_aranges
+                0x0000000000000300       0x20 build/drawT.o
+ .debug_aranges
+                0x0000000000000320       0x20 build/drawtt.o
+ .debug_aranges
+                0x0000000000000340       0x20 build/drawTwelve.o
+ .debug_aranges
+                0x0000000000000360       0x20 build/drawTwo.o
+ .debug_aranges
+                0x0000000000000380       0x20 build/drawU.o
+ .debug_aranges
+                0x00000000000003a0       0x20 build/drawY.o
+ .debug_aranges
+                0x00000000000003c0       0x20 build/drawZero.o
+ .debug_aranges
+                0x00000000000003e0       0x20 build/equal.o
+ .debug_aranges
+                0x0000000000000400       0x20 build/framebuffer.o
+ .debug_aranges
+                0x0000000000000420       0x20 build/gameOver.o
+ .debug_aranges
+                0x0000000000000440       0x20 build/gameScreen.o
+ .debug_aranges
+                0x0000000000000460       0x20 build/GameWon.o
+ .debug_aranges
+                0x0000000000000480       0x20 build/getGPIO.o
+ .debug_aranges
+                0x00000000000004a0       0x20 build/GG.o
+ .debug_aranges
+                0x00000000000004c0       0x20 build/jtag.o
+ .debug_aranges
+                0x00000000000004e0       0x20 build/mailbox.o
+ .debug_aranges
+                0x0000000000000500       0x20 build/maingGame.o
+ .debug_aranges
+                0x0000000000000520       0x28 build/main.o
+ .debug_aranges
+                0x0000000000000548       0x20 build/menuScreen.o
+ .debug_aranges
+                0x0000000000000568       0x20 build/movePeddleL.o
+ .debug_aranges
+                0x0000000000000588       0x20 build/movePeddleR.o
+ .debug_aranges
+                0x00000000000005a8       0x20 build/NewGame.o
+ .debug_aranges
+                0x00000000000005c8       0x20 build/Read.o
+ .debug_aranges
+                0x00000000000005e8       0x20 build/ReadSNES.o
+ .debug_aranges
+                0x0000000000000608       0x20 build/SetGPIO.o
+ .debug_aranges
+                0x0000000000000628       0x20 build/SNESinit.o
+ .debug_aranges
+                0x0000000000000648       0x20 build/UARTinit.o
+ .debug_aranges
+                0x0000000000000668       0x20 build/wipe.o
+ .debug_aranges
+                0x0000000000000688       0x20 build/Write.o
+
+.debug_ranges   0x0000000000000000       0x20
+ .debug_ranges  0x0000000000000000       0x20 build/main.o

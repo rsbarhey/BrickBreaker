@@ -1,0 +1,28 @@
+.section .text
+.globl drawPeddle
+
+
+drawPeddle:
+
+	push {r0-r11, lr}
+
+	ycoor	.req	r0
+	xcoor	.req	r1
+	height	.req	r2
+	width	.req	r3
+	colour	.req	r5
+	addr 	.req	r4
+
+	ldr 	ycoor, =737					// draw the peddle at 737
+	ldr 	xcoor, =370					// at 370
+	ldr 	height, =15					// with a height of 15
+	ldr 	width, =120					// width 120
+	ldr 	colour, =0x00ff					// and a colour
+	ldr	addr, [r7, #32]
+
+	bl	drawShape					// draw it
+
+
+	pop {pc}
+
+

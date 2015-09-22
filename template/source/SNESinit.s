@@ -1,0 +1,37 @@
+.section    .text
+.globl     SNESinit
+
+.equ	GPIOFSEL0,	0x20200000
+.equ	GPIOFSEL1,	0x20200004
+
+/*
+* This code was taken from the tutorial example 
+*/
+
+SNESinit:
+
+	push	{r0-r11, lr}
+	// GPIO 9 (LAT) is on GPIOFSEL0
+	ldr		r0, =GPIOFSEL0
+	ldr		r1, [r0]
+	
+	// clear bits 27-29 and set them to 001 (Output)
+	bic		r1, #0x38000000
+	orr		r1, #0x08000000
+
+	// write back to GPIOFSEL0
+	str		r1, [r0]
+
+	// GPIO 10 & 11 are on GPIOFSEL1
+	ldr		r0, =GPIOFSEL1
+	ldr		r1, [r0]
+
+	// clear bits 0-2 (GPIO 10) and 3-5 (GPIO 11), set 0-2 to 000 (Input) and 3-5 to 001 (Output)
+	bic		r1, #0x0000003F
+	orr		r1, #0x00000008
+
+	// write back to GPIOFSEL1
+	str		r1, [r0]
+
+	// return
+	pop	{r0-r11, pc}

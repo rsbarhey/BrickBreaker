@@ -1,0 +1,118 @@
+.section .text
+.globl 	drawScore
+
+drawScore:
+	push 	{lr}
+
+
+	/*wipe out the score box */
+
+		ycoor	.req	r0
+		xcoor	.req	r1
+		height	.req	r2
+		width	.req	r3
+		colour	.req	r5
+		addr 	.req	r4
+
+		/*draw one*/
+		ldr 	ycoor, =80
+		ldr 	xcoor, =910
+		ldr 	height, =70					
+		ldr 	width, =60
+		ldr 	colour, =0xff11					// blocj colour for the numbers
+		ldr	addr, [r7, #32]
+		bl	drawShape
+
+		ldr 	ycoor, =80
+		ldr 	xcoor, =943
+	/*which score to draw*/
+lrt:
+	cmp 	r11, #0
+	beq 	d0 
+	cmp 	r11, #1
+	beq 	d1
+	cmp 	r11, #2
+	beq 	d2
+	cmp 	r11, #3
+	beq 	d3
+	cmp 	r11, #4
+	beq 	d4
+	cmp 	r11, #5
+	beq 	d5
+	cmp 	r11, #6
+	beq 	d6
+	cmp 	r11, #7
+	beq 	d7
+	cmp 	r11, #8
+	beq 	d8
+	cmp 	r11, #9
+	beq 	d9
+	cmp 	r11, #10
+	beq 	d10
+	cmp 	r11, #11
+	beq 	d11
+	cmp 	r11, #12
+	beq 	d12
+	cmp 	r11, #13
+	beq 	d13
+	cmp 	r11, #14
+	beq 	d14
+	cmp 	r11, #15
+	beq 	d15
+	cmp 	r11, #16
+	beq 	d16
+
+d0:
+	bl 	drawZero
+	pop 	{pc}
+d1:
+	bl 	drawOne
+	pop 	{pc}
+d2:
+	bl 	drawTwo
+	pop 	{pc}
+
+
+d3:
+	bl 	drawThree
+	pop 	{pc}
+d4:
+	bl 	drawFour
+	pop 	{pc}
+d5:
+	bl 	drawFive
+	pop 	{pc}
+d6:
+	bl 	drawSix
+	pop 	{pc}
+d7:
+	bl 	drawSeven
+	pop 	{pc}
+d8:
+	bl drawEight
+	pop 	{pc}
+d9:	
+	bl drawNine
+	pop 	{pc}
+d10:
+	bl 	drawTen
+	pop 	{pc}
+d11:
+	bl 	drawEleven
+	pop 	{pc}
+d12:
+	bl 	drawTwelve
+	pop 	{pc}
+d13:
+	bl 	drawtt
+	pop 	{pc}
+d14:
+	bl 	drawft
+	pop 	{pc}
+d15:
+	bl drawfteen
+	pop 	{pc}	
+d16:
+	bl 	drawst
+	
+	pop 	{pc}

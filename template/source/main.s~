@@ -1,0 +1,77 @@
+/*
+*	Assignment 3 - ARM, miniUART interface.
+*	Authors: Ragheeb Barheyan, Nik Ryzhenkov
+*	
+*/
+
+.section    .init
+.globl     _start
+
+
+_start:
+    b       main
+    
+
+
+.section .text
+
+
+
+
+main:
+    mov     sp, #0x8000
+	
+	bl		EnableJTAG
+
+
+
+	/*The beginning of the main program. 
+	*..First we initialize the miniUART interface
+	*..Then we implement functionalities such as command promt commands ( led on, led off, echo "<string>", quit)
+	*/
+	bl	_UARTinit			// Initializing the miniUART
+
+
+	//mov	r0, #0x3e
+	//bl	_Write
+
+
+	bl	SNESinit
+	bl	InitFrameBuffer
+	ldr	r6, [r0,#32]
+	mov	r7, r0
+restart:
+	bl	NewGame				
+	
+	bl	menuScreen
+	//mov	r10, #0
+
+	cmp	r12, #1
+	bne	restart
+	
+	//bl	movePeddleR
+	//bl	movePeddleL
+
+	
+
+	
+
+	//bl	MainGame
+
+//-------------------------------------------------------------------------------------------------
+
+	mov	r2, #1			// debugging
+
+
+//------------------------------------------------------------------------
+	
+
+haltLoop$:
+	b		haltLoop$
+
+
+.section .data
+
+//------------------------------------------------
+	
+
